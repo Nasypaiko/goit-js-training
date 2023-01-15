@@ -67,6 +67,8 @@ console.log(string2.toLowerCase().includes(blacklistedWord2));
 console.log(string3.includes(blacklistedWord1));
 console.log(string3.includes(blacklistedWord2));
 
+// Приведение к булю на примере Boolean(value)
+
 // Запомните 6 ложных (falsy) значений, приводящихся к false в логическом
 // преобразовании: 0, NaN, null, undefined, пустая строка: "" или '', false.
 // Абсолютно все остальное приводится к true.
@@ -74,3 +76,16 @@ console.log(string3.includes(blacklistedWord2));
 console.log(Boolean(5));
 console.log(Boolean(0));
 
+// Логическое И (оператор &&)
+
+console.log(5 && 6 && 'hello')
+console.log(0 && 6 && 'hello')
+
+// Логическое ИЛИ (оператор ||)
+
+console.log(5 || 6 || 8 || 10)
+console.log(false || 0 || 8 || 10)
+
+// Логическое НЕ (оператор !)
+
+console.log(!false)
