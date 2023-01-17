@@ -62,3 +62,4 @@ const index = Math.round(Math. random() * (maxs- mins) + min);
 const color = colors[index];
 console.log(color);
 // document.body.style.backgroundColor = color;
+

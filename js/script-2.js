@@ -26,3 +26,4 @@ console.log(Number(false));
 
 console.log(Number(quantity));
 console.log(Number(value));
+
