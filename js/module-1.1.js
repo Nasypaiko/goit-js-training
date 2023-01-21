@@ -1,196 +1,331 @@
-// --- Онлайн лекция 1
 
-const value = 27.5;
+// Переменные и типы примитивов
+// const и let
+// Логирование с методом console.log()
+// Уникальность идентификатора
 
-const ceil = Math.ceil(value);
-const floor = Math.floor(value);
-const round = Math.round(value);
+const age = 10;
+const totalPrice = 200.74;
+const userName = 'Chelsy';
+const message = 'Добро пожаловать!';
+const isOpen = true;
+const shouldConfirm = false;
 
-console.log(ceil, floor, round);
+console.log('Цена', totalPrice);
 
-// --- Задача
+console.log('5');
 
-// Напиши скрипт, який розраховує індекс маси тіла людини.
-// Для цього потрібно розділити вагу в кілограмах на квадрат висоти у метрах.
-// Вага та висота зберігаються в змінних weight i height, але не як числа,
-// а у вигляді рядків(спеціально для завдання).
-// Нецілі числа можуть бути задані у вигляді 24.7 або 24, 7
-// тобто як роздільник дробної частини числа може бути кома.
-// Індекс маси тіла необхідно округлити до однієї цифри після коми.
+// Оператор typeof 
 
-let weight = "88,3";
-let height = "1.98";
+const type1 = typeof 'qwerty';
+console.log(type1);
 
-const numericWeight = Number.parseFloat(weight.replace(",", "."));
-const numericHeight = Number.parseFloat(height.replace(",", "."));
+const type2 = typeof 5;
+console.log(type2);
 
-console.log(numericWeight);
-console.log(numericHeight);
+const type3 = typeof isOpen;
+console.log(type3);
 
-const bmi = numericWeight / numericHeight ** 2;
+// Как window.alert() блокирует интерпретацию
 
-console.log(bmi);
+console.log('До');
+alert();
+console.log('После');
 
-// console.log(Math.floor(bmi * 10) / 10);
+// Ввод пользователя
+// Методы window.confirm() и window.prompt()
 
-console.log(Number(bmi.toFixed(1)));
+const shouldRenew = confirm('Хотите продлить прописку?');
+console.log(shouldRenew);
 
-// --- Онлайн лекция 2
-
-// --- Задача
-
-// Використовуючи конструкцію if...else та prompt, напиши код,
-// який запитуватиме: 'Який стандарт мови JavaScript?'.
-// Якщо користувач вводить ECMAScript, то показуй alert з рядком "Вірно!',
-// інакше - 'Не знаєте? ECMAScript!'
-
-const message = prompt("Який стандарт мови JavaScript?");
-if (message === "ECMAScript") {
-  alert("Вірно!");
-} else {
-  alert("Не знаєте? ECMAScript!");
-}
-
-// --- Задача
-
-// Напиши скрипт, який приводить у консоль рядок "Це додатнє число", якщо
-// в prompt користувач ввів число більше за нуль. Якщо було введено нуль,
-// виводь у консоль рядок "Це нуль'. Якщо передали відʼємне число, у консолі
-// має бути рядок "Це від'ємне число".
-
-const number = Number(prompt(`Write your number`));
-if (number > 0) {
-  console.log("Це додатнє число");
-} else if (number === 0) {
-  console.log("Це нуль");
-} else {
-  console.log("Це відʼємне число");
-}
-
-// --- Приклад
-
-// if (!link.endsWidth("/")) {
-//     link += '/';
-// }
-
-// --- Задача
-
-// Напиши скрипт для відображення дедлайну - часу здачі проєкту.
-// Використовуй конструкцію switch...case
-// Якщо до дедлайну 0 днів - виведи рядок "Сьогодні"
-// Якщо до дедлайну 1 день - виведи рядок "Завтра"
-// Якщо до дедлайну 2 дні - виведи рядок "Післязавтра"
-// Якщо до дедлайну 3+ днів - виведи рядок "Можна відпочити :)"
-
-const deadline = Number(prompt("Write eadline"));
-
-switch (deadline) {
-  case 0: {
-        console.log(`Сьогодні`);
-        break;
-  }
-  case 1: {
-        console.log(`Завтра`);
-        break;
-  }
-  case 2: {
-        console.log(`Післязавтра`);
-        break;
-  }
-  default: {
-        console.log(`Можна відпочити :)`);
-        break;
-  }
-}
+let quantity = prompt('Введите количество товаров');
+quantity = Number(quantity);
+console.log(quantity);
+console.log(typeof quantity);
 
 
-// --- Задача
+// Парс числа с Number.parseInt() и Number.parseFloat()
 
-// Напиши скрипт котрий порахує суму чисел від 1 до 10 та виведе у консоль результат. 
+let elementWidth = '50px';
+const result = Number.parseInt(elementWidth);
+console.log(result);
 
-let sum = 0;
+let elementHeight = '200.74';
+elementHeight = Number.parseFloat(elementHeight);
+console.log('elementHeight: ', elementHeight);
 
-for (let num = 1; num <= 10; num += 1) {
-    console.log(num);
-    sum += num;
-}
+// Метод число.toFixed(digits)
 
-console.log(sum);
+let salary = 1300.6543;
+salary = Number(salary.toFixed(2));
+// salary = Number(salary);
+console.log(salary);
+
+// Приведение (преобразование) к числу с Number(value)
+// Значение NaN (Not a Number) и метод Number.isNaN(value)
+
+let quantity = '30';
+let value = 'Эту строку невозможно привести к числу';
+
+console.log(Number(true));
+console.log(Number(false));
+
+console.log(Number(quantity));
+console.log(Number(value));
 
 
-// --- Задача
+// Объект Math
+// Возведение в степень
+// Exponent operator
 
-// Напиши цикл ог який виводить у консоль браузера числа зростанням
-// від min до max, але якщо число кратне 5. 
+// console.log(Math);
 
-const min = 20;
+const first = 2;
+const second = 5;
+
+const result = Math.pow(2, 3);
+
+console.log(result);
+
+const base = 2;
+const power = 5;
+
+console.log(Math.pow(base, power));
+
+console.log(2 ** 5);
+
+// Math.sqrt()
+
+// Напиши скрипт который просит пользователя ввести число и степень,
+// возводит число в эту степень и выводит результат в консоль
+
+// 1. попросить ввести число и сохранить в переменную
+
+let bases = prompt('Введите число');
+bases = Number(bases);
+console.log(bases);
+
+// 2. попросить ввести степень и сохранить в переменную
+
+let powers = prompt('Введите степень');
+powers = Number(powers);
+console.log(powers)
+
+// 3. возвести введённые данные в степень и вывести
+
+const results = bases ** powers;
+console.log(results);
+
+// Генерим псевдослучайные числа
+// Math.random()
+// Math.round()
+
+console.log(Math.random());
+
+// Math.random() * (max - min) + min;
 
 const max = 100;
+const min = 0;
+const resultat = Math.round(Math.random() * (max - min) + min);
+console.log(resultat);
 
-for (let iteration = min; iteration <= max; iteration += 1) {
-    if (iteration % 5 === 0) {
-        console.log(iteration);
-    }
-}
+// --- Задача ---
 
-
-// --- Задача
-
-// Напишіть скрипт який порахує скільки на проміжку від from до to було чисел,
-// які є кратними 7.
-
-const from = 1;
-
-const to = 20;
-
-let count = 0;
-
-for (let i = from; i <= to; i += 1) {
-    if (i % 7 === 0) {
-        console.log(i);
-        count += 1;
-    }
-}
-
-console.log(count);
+const colors = ['tomato', 'teal', 'orange', 'deeppink', 'skyblue'];
+const maxs = colors.length - 1;
+const mins = 0;
+const index = Math.round(Math. random() * (maxs- mins) + min);
+const color = colors[index];
+console.log(color);
+// document.body.style.backgroundColor = color;
 
 
-// --- Задача
 
-// Напишіть скрипт для світлофора, де користувач може ввести назву кольору
-// у prompt і в залежності від того який був введений колір відображатимуться
-// різні повідомлення через alert. Використовуй конструкцію switch case.
+// Длина строки, свойство length 
 
-// red - 'STOP!!!!'
-// green - 'GO!'
-// yellow - 'Wait a little!'
+const message = 'В этой строке 26 символов.';
+console.log(message.length);
 
-const color = prompt("Write your color").toLowerCase();
-switch (color) {
-  case "red":
-    alert("STOP!!!!");
-    break;
+// Конкатенация строк
 
-  case "green":
-    alert("GO!");
-    break;
+const firstName = 'Chealsy';
+const lastName = 'Emerald';
+const fullName = firstName + ' ' + lastName;
+console.log(fullName);
 
-  case "yellow":
-    alert("Wait a little!");
-    break;
+console.log(5 + '5');
 
-  default:
-    break;
-}
+// Напиши скрипт который виведет строку в формате:
+// «Гость х у поселяется в z номер q», 
+// подставив вместо х у z q значения переменных
+
+const room = 716;
+const type = 'VIP';
+
+const welcomeMsg =
+  "Гость " +
+  firstName +
+  " " +
+  lastName +
+  " поселяется в " +
+  type +
+  " номер " +
+  room;
+
+console.log(welcomeMsg);
+
+// Шаблонные строки (template strings)
+
+const quantitys = 10;
+const orderMsg = `Вы заказали ${quantitys} холодильников.`;
+console.log(orderMsg);
+
+// Нормализация с методом toLowerCase()
+
+const brand = 'Samsung';
+const normalizedBrand = brand.toLowerCase();
+const inDb = 'samsung';
+console.log(normalizedBrand);
+
+let brands = 'samSUnG';
+console.log(brands[4]);
+console.log(brands.slice(1).toLowerCase());
+brands = brands[0] + brands.slice(1).toLowerCase();
+console.log(brands);
+
+// Поиск в строке с методом includes()
+
+const blacklistedWord1 = 'спам'; 
+const blacklistedWord2 = 'распродажа';
+const string1 = 'Привет, я принц Абдул, это не спам, предлагаю тебе миллион!';
+const string2 = 'Самая большая РАСПРОДАЖА этой недели, не пропустите!';
+const string3 = 'Рекламная компания #fatlivesmatter';
+
+console.log(string1.includes(blacklistedWord1));
+console.log(string1.includes(blacklistedWord2));
+
+console.log(string2.includes(blacklistedWord1));
+console.log(string2.toLowerCase().includes(blacklistedWord2));
+
+console.log(string3.includes(blacklistedWord1));
+console.log(string3.includes(blacklistedWord2));
+
+// Приведение к булю на примере Boolean(value)
 
 
-// --- Задача
+// --- Корисно
+// Шість значень, які в булевому перетворенні приводяться до `false`:
+// `0`, `NaN`, `null`, `undefined`, порожній рядок `""` або`''` 
+// і саме значення`false`. Абсолютно все інше приводиться до`true`.
 
-// Напиши скрипт який буде просити нас ввести число більше за
-// 100, доки ми таке не введемо. Скористайся циклом while.
 
-const numbers = Number(prompt('Write your number bigger then 100'));
 
-while (numbers < 100) {
-    number = Number(prompt('Write your number bigger then 100'));
-}
+console.log(Boolean(5));
+console.log(Boolean(0));
+
+// Логическое И (оператор &&)
+
+console.log(5 && 6 && 'hello')
+console.log(0 && 6 && 'hello')
+
+// Логическое ИЛИ (оператор ||)
+
+console.log(5 || 6 || 8 || 10)
+console.log(false || 0 || 8 || 10)
+
+// Логическое НЕ (оператор !)
+
+console.log(!false)
+
+
+
+// Напишите скрипт который проверяет вхождение
+// числа в отрезок обозначенный х1 и ×2
+
+const x1 = 10;
+const x2 = 30;
+const number = 50;
+
+// - До х1
+
+console.log(`Число ${number} попадает в отрезок до ${x1}?`, number < x1);
+
+// - После х2
+
+console.log(`Число ${number} попадает в отрезок после ${x2}?`, number > x2);
+
+// - От х1 до х2
+
+const res = number > x1 && number < x2;
+console.log(`Число ${number} попадает в отрезок от ${x1} до ${x2}?`, res);
+
+// - До х1 или после х2
+
+const result = number < x1 || number > x2;
+console.log(`Число ${number} попадает в отрезок до ${x1} или после ${x2}?`, result);
+
+
+
+// Напишите скрипт который проверяет возможность открыть чат с пользователем.
+// Для этого пользователь должен быть:
+// - другом
+// - онлайн
+// - без режима не беспокоить
+
+const isOnline = true;
+const isFriend = true;
+const isDnd = false;
+
+const canOpenChat = isOnline && isFriend && !isDnd;
+console.log('Можно открыть чат?', canOpenChat);
+
+
+// Напиши скрипт проверки подписки пользователя при доступе к контенту.
+// - есть три типа подписки: free, pro и vip
+// - получить доступ могут только пользователи pro и vip 
+
+const sub = 'pro';
+
+// если пользователь рго или пользователь уір тогда есть доступ
+
+const canAccessContent = sub === 'pro' || sub === 'vip';
+// true || false => true
+console.log('Есть доступ к контенту?', canAccessContent);
+
+
+// Оператор ветвления if
+
+if (5 > 1) { console.log('выполняется') }
+if (5 < 1) { console.log('не выполняется') }
+
+// Оператор ветвления if...else
+
+if (5 < 1) { console.log('выполняется') }
+else { console.log('не выполняется') }
+
+// Оператор ветвления else...if
+
+const salary = 1500;
+
+if (salary < 500) { console.log('Уровень 1'); } 
+else if (salary > 500 && salary <= 1500) { console.log('Уровень 2'); }
+else if (salary > 1500 && salary < 3000) { console.log('Уровень 3') }
+else { console.log('Уровень 4')};
+
+
+
+// Тернарный оператор
+
+const balance = 1000;
+
+// let message;
+
+// if (balance >= 0) {
+//     message = 'Позитивный баланс';
+// } else {
+//     message = 'Негативный баланс';
+// }
+
+const message = balance >= 0 ? 'Позитивный баланс' : 'Негативный баланс';
+
+console.log(message);
