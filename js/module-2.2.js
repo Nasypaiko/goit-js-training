@@ -39,9 +39,39 @@
 // }
 
 
-const fruits = ["apple", "plum", "pear", "orange"];
+// const fruits = ["apple", "plum", "pear", "orange"];
 
-fruits[1] = "peach"
-fruits[3] = "banana"
+// fruits[1] = "peach"
+// fruits[3] = "banana"
 
-console.log(fruits)
+// console.log(fruits)
+
+
+
+// const fruits = ["apple", "peach", "pear", "banana", "plum"];
+
+// const fruitsArrayLength = fruits.length
+
+// console.log(fruitsArrayLength)
+
+
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// const lastElementIndex = fruits.length - 1
+// const lastElement = fruits[lastElementIndex]
+
+// console.log(lastElement)
+
+
+
+
+// function getExtremeElements(array) {
+//     const result = [];
+//     result.push(array[0], array[array.length - 1]);
+//     return result;
+// }
+
+// console.log(getExtremeElements([1, 2, 3, 4, 5]))
+
+
+
